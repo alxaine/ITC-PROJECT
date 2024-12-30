@@ -5,27 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Care Services - About</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function showAdoptionForm() {
+            var form = document.getElementById('adoption-form');
+            form.style.display = 'block'; // Show the form
+        }
+    </script>
 </head>
 <body>
     <header>
-    <h1>Animal Care Services</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="adopt.html">Animal Adoption</a></li>
-            <li><a href="vets.html">Low-Cost Vet Clinics</a></li>
-            <li><a href="training.html">Pet Training</a></li>
-            <li><a href="volunteer.html">Volunteer Opportunities</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+        <h1>Animal Care Services</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="adopt.html">Animal Adoption</a></li>
+                <li><a href="vets.html">Low-Cost Vet Clinics</a></li>
+                <li><a href="training.html">Pet Training</a></li>
+                <li><a href="volunteer.html">Volunteer Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section id="adopt">
         <h2>Animal Adoption Services</h2>
         <p>Find your new furry friend through our animal adoption program. We have many pets looking for loving homes.</p>
         <button onclick="showAdoptionForm()">Adopt a Pet</button>
+        
+        <!-- Hidden adoption form -->
+        <div id="adoption-form" style="display:none;">
+            <h3>Adoption Form</h3>
+            <form action="#">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="pet">Choose a Pet:</label>
+                <select id="pet" name="pet">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="rabbit">Rabbit</option>
+                </select><br><br>
+
+                <input type="submit" value="Submit Adoption Request">
+            </form>
+        </div>
     </section>
 
     <footer>
