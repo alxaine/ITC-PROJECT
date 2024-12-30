@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption Transaction</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #2C3E50;
+        }
+        .confirmation {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .pet-details {
+            margin-top: 20px;
+        }
+        .pet-details img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2C3E50;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Animal Care Services</h1>
+    </header>
+
+    <section class="confirmation">
+        <h2>Adoption Request Confirmation</h2>
+        <p>Thank you for your adoption request! We are excited to help you find your new furry friend.</p>
+
+        <div class="pet-details">
+            <h3>Adopted Pet:</h3>
+            <p id="pet-name"></p>
+            <img id="pet-image" src="" alt="Adopted Pet Image">
+        </div>
+
+        <p>If the information provided is correct, we will proceed with the adoption process and contact you soon!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Animal Care Services</p>
+    </footer>
+
+    <script>
+        // Get the URL parameters to populate the page with the adoption details
+        const urlParams = new URLSearchParams(window.location.search);
+        const pet = urlParams.get('pet');
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+
+        // Display the user's details and the selected pet
+        document.getElementById('pet-name').textContent = pet.charAt(0).toUpperCase() + pet.slice(1);
+
+        // Set the pet image based on the selection
+        let petImage = '';
+        if (pet === 'dog') {
+            petImage = 'https://images.freeimages.com/images/large-previews/ed6/happy-dog-swimming-serenely-0410-5697270.jpg?fmt=webp&h=350';
+        } else if (pet === 'cat') {
+            petImage = 'https://plus.unsplash.com/premium_photo-1673967831980-1d377baaded2?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        } else if (pet === 'rabbit') {
+            petImage = 'https://www.shutterstock.com/shutterstock/photos/2551392385/display_1500/stock-photo-a-flemish-giant-rabbit-image-2551392385.jpg';
+        }
+
+        // Display the pet image
+        document.getElementById('pet-image').src = petImage;
+    </script>
+
+</body>
+</html>
