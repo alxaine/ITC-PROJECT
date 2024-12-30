@@ -5,35 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Care Services - About</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Hide the form and show confirmation message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
-    <h1>Animal Care Services</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="adopt.html">Animal Adoption</a></li>
-            <li><a href="vets.html">Low-Cost Vet Clinics</a></li>
-            <li><a href="training.html">Pet Training</a></li>
-            <li><a href="volunteer.html">Volunteer Opportunities</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+        <h1>Animal Care Services</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="adopt.html">Animal Adoption</a></li>
+                <li><a href="vets.html">Low-Cost Vet Clinics</a></li>
+                <li><a href="training.html">Pet Training</a></li>
+                <li><a href="volunteer.html">Volunteer Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="contact">
+    <section id="contact">
         <h2>Contact Us</h2>
         <p>If you have any questions or would like to get involved, please contact us:</p>
-        <form id="contactForm">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+            <button type="submit">Submit</button><button type="submit">Submit</button>
+            </form> 
+        
+
+        
+        <div id="confirmationMessage" style="display: none;">
+            <h2>Thank You!</h2>
+            <p>Your message has been received, and we have sent an email to the address you provided. We'll get back to you as soon as possible!</p>
+        </div>
     </section>
 
     <footer>
